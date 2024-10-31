@@ -1,18 +1,17 @@
 import random
 
-
 def crear_tablero(n):
     return [[' ' for _ in range(n)] for _ in range(n)]
 
-
 def mostrar_tablero(tablero):
     n = len(tablero)
-    separador = "+" + "---+" * n  # Separador entre filas
-    for fila in tablero:
-        print(separador)
-        print("| " + " | ".join(fila) + " |")
-    print(separador)  # Línea final del tablero
-
+    if n == 3 or n == 4:
+        print("  ┌" + "─────┬" * (n - 1) + "─────┐")
+        for i, fila in enumerate(tablero):
+            print("  │  " + "  │  ".join(fila) + "  │")
+            if i < n - 1:
+                print("  ├" + "─────┼" * (n - 1) + "─────┤")
+        print("  └" + "─────┴" * (n - 1) + "─────┘")
 
 def verificar_ganador(tablero, jugador):
     n = len(tablero)
@@ -28,10 +27,8 @@ def verificar_ganador(tablero, jugador):
 
     return False
 
-
 def tablero_lleno(tablero):
     return all(celda != ' ' for fila in tablero for celda in fila)
-
 
 def jugar_jugador(tablero, jugador):
     while True:
@@ -46,7 +43,6 @@ def jugar_jugador(tablero, jugador):
         except (ValueError, IndexError):
             print("Entrada inválida. Intenta nuevamente.")
 
-
 def jugar_computadora(tablero, jugador):
     n = len(tablero)
     while True:
@@ -55,7 +51,6 @@ def jugar_computadora(tablero, jugador):
             tablero[fila][col] = jugador
             print(f"La computadora ha jugado en ({fila + 1}, {col + 1})")
             break
-
 
 def tic_tac_toe():
     while True:
@@ -69,7 +64,7 @@ def tic_tac_toe():
             print("Entrada inválida. Intenta nuevamente.")
 
     tablero = crear_tablero(n)
-    modo = input("¿Jugar contra otra persona (2) o contra la computadora (1)? Ingresa 1 o 2: ")
+    modo = input("¿Jugar contra la computadora (1) o contra otra persona (2)? Ingresa 1 o 2: ")
     jugador_actual = 'X'
 
     while True:
@@ -91,6 +86,9 @@ def tic_tac_toe():
 
         jugador_actual = 'O' if jugador_actual == 'X' else 'X'
 
-
 # Iniciar el juego
 tic_tac_toe()
+
+
+
+
