@@ -1,5 +1,3 @@
-# tablero.py
-
 def crear_tablero(n):
     return [[' ' for _ in range(n)] for _ in range(n)]
 

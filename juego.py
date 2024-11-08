@@ -1,5 +1,3 @@
-# juego.py
-
 from tablero import crear_tablero, mostrar_tablero, verificar_ganador, tablero_lleno
 from jugadores import jugar_jugador, jugar_computadora
 
@@ -27,12 +25,12 @@ def tic_tac_toe():
 
         if verificar_ganador(tablero, jugador_actual):
             mostrar_tablero(tablero)
-            print(f"¡¡¡¡¡¡¡¡¡¡¡¡El jugador {jugador_actual} ha ganado!!!!!!!!!!!!")
+            print(f"¡El jugador {jugador_actual} ha ganado!")
             break
 
         if tablero_lleno(tablero):
             mostrar_tablero(tablero)
-            print("¡Empate!")
+            print("No hay mas casillas libres para marcar, ¡Es empate!")
             break
 
         jugador_actual = 'O' if jugador_actual == 'X' else 'X'
@@ -40,3 +38,5 @@ def tic_tac_toe():
 # Iniciar el juego
 if __name__ == "__main__":
     tic_tac_toe()
+
+

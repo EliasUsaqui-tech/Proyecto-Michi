@@ -1,12 +1,10 @@
-# jugadores.py
-
 import random
 
 def jugar_jugador(tablero, jugador):
     while True:
         try:
-            fila = int(input(f"Jugador {jugador}, ingresa la fila: ")) - 1
-            col = int(input(f"Jugador {jugador}, ingresa la columna: ")) - 1
+            fila = int(input(f"Jugador {jugador}, ingresa la fila: "))
+            col = int(input(f"Jugador {jugador}, ingresa la columna: "))
             if tablero[fila][col] == ' ':
                 tablero[fila][col] = jugador
                 break
@@ -21,5 +19,5 @@ def jugar_computadora(tablero, jugador):
         fila, col = random.randint(0, n - 1), random.randint(0, n - 1)
         if tablero[fila][col] == ' ':
             tablero[fila][col] = jugador
-            print(f"La computadora ha jugado en ({fila + 1}, {col + 1})")
+            print(f"La computadora ha jugado en ({fila}, {col})")
             break
