@@ -76,7 +76,7 @@ def tic_tac_toe():
 
         if verificar_ganador(tablero, jugador_actual):
             mostrar_tablero(tablero)
-            print(f"¡El jugador {jugador_actual} ha ganado!")
+            print(f"¡¡¡¡¡¡¡¡¡¡¡¡El jugador {jugador_actual} ha ganado!!!!!!!!!!!!")
             break
 
         if tablero_lleno(tablero):
